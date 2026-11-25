@@ -11,3 +11,12 @@ test("monthly quote excludes suspended seats", () => {
 
   assert.equal(monthlySeatCost(seats, 30), 60);
 });
+
+test("monthly quote is zero when no seats are active", () => {
+  const seats = [
+    { user: "Morgan", status: "suspended" },
+    { user: "Taylor", status: "inactive" },
+  ];
+
+  assert.equal(monthlySeatCost(seats, 30), 0);
+});

@@ -1,3 +1,3 @@
 export function monthlySeatCost(seats, pricePerSeat) {
-  return seats.length * pricePerSeat;
+  return seats.filter((seat) => seat.status === "active").length * pricePerSeat;
 }
